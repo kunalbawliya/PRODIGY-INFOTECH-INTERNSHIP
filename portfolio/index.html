@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Toggle -->
+  <button class="theme-toggle" id="themeToggle">🌙</button>
+
+  <!-- Background Bubbles -->
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="header" data-aos="fade-down">
+    <img src="profile.png" alt="Profile" class="profile-img"/>
+    <h1 class="title">👋 Hi, I'm [Your Name]</h1>
+    <p class="subtitle">Frontend Developer & UI Enthusiast</p>
+  </header>
+
+  <main class="container">
+    <section class="card" data-aos="fade-up">
+      <h2>💼 Projects</h2>
+      <ul class="project-list">
+        <li><a href="#">🌐 Modern Landing Page</a></li>
+        <li><a href="#">🎮 Tic Tac Toe Game</a></li>
+        <li><a href="#">⏱ Stopwatch App</a></li>
+      </ul>
+    </section>
+
+    <section class="card" data-aos="fade-up">
+      <h2>🧠 Skills</h2>
+      <div class="skills">
+        <span>🌐 HTML</span>
+        <span>🎨 CSS</span>
+        <span>⚙️ JavaScript</span>
+        <span>⚛️ React</span>
+        <span>🧩 Git</span>
+      </div>
+    </section>
+
+    <section class="card" data-aos="fade-up">
+      <h2>🙋 About Me</h2>
+      <p>
+        I'm passionate about creating beautiful and responsive web apps with clean code and sleek designs.
+        I enjoy working with HTML, CSS, JavaScript, and learning modern frameworks.
+      </p>
+    </section>
+
+    <section class="card" data-aos="fade-up">
+      <h2>📬 Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+    </section>
+
+    <a href="../index.html" class="back-link" data-aos="fade-up">⬅ Back to Home</a>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
