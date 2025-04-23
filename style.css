@@ -1,83 +1,122 @@
-/* Reset and Base */
+/* Base Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-behavior: smooth;
-    animation: fadeIn 1.2s ease;
-  }
-  
-  /* Hero Container */
-  .hero {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-  }
-  
-  /* Title and Subtitle */
-  .title {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    margin-bottom: 30px;
-  }
-  
-  /* Navigation Links */
-  .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    background: #ffffff;
-    padding: 15px 25px;
-    color: #333;
-    font-weight: bold;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  }
-  
-  .nav-link:hover {
-    background: #66a6ff;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  }
-  
-  /* Fade In Animation */
-  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Responsive */
-  @media (min-width: 600px) {
-    .nav {
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
-  
+/* Default Light Theme (Day) */
+:root {
+  --bg-color: linear-gradient(135deg, #89f7fe, #66a6ff);
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --button-bg: #ffffff;
+  --button-color: #333;
+  --button-hover-bg: #66a6ff;
+  --button-hover-color: white;
+}
+
+/* Dark Theme (Night) */
+.dark-mode {
+  --bg-color: #1e1e2f;
+  --text-color: #f1f1f1;
+  --card-bg: #2a2a3d;
+  --button-bg: #2a2a3d;
+  --button-color: #f1f1f1;
+  --button-hover-bg: #444;
+  --button-hover-color: #fff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  transition: all 0.4s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Hero Container */
+.hero {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.2s ease;
+}
+
+/* Title and Subtitle */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  background: var(--button-bg);
+  color: var(--button-color);
+  padding: 15px 25px;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.nav-link:hover {
+  background: var(--button-hover-bg);
+  color: var(--button-hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

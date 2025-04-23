@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle">🌙</button>
+
+  <!-- Hero Section -->
   <div class="hero">
     <h1 class="title">🚀 Prodigy Infotech Internship</h1>
     <p class="subtitle">Explore my hands-on web development projects</p>
@@ -17,5 +21,26 @@
       <a href="portfolio/index.html" class="nav-link">💼 Portfolio</a>
     </nav>
   </div>
+
+  <!-- Theme Script -->
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    // Load saved theme on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      }
+    });
+  </script>
 </body>
 </html>
