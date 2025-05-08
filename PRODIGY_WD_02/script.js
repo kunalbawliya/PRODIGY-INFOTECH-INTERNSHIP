@@ -2,6 +2,8 @@ const display = document.getElementById("display");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
+const lapBtn = document.getElementById("lapBtn");
+const lapList = document.getElementById("laps");
 
 let startTime = 0;
 let elapsedTime = 0;
@@ -37,6 +39,14 @@ resetBtn.addEventListener("click", () => {
   clearInterval(interval);
   elapsedTime = 0;
   updateDisplay();
+  lapList.innerHTML = ""; // Clear laps
+});
+
+lapBtn.addEventListener("click", () => {
+  if (!running) return;
+  const li = document.createElement("li");
+  li.textContent = display.textContent;
+  lapList.appendChild(li);
 });
 
 updateDisplay();
