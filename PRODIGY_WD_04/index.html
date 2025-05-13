@@ -3,71 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <title>Techolic Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2d8d4b14b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Toggle -->
-  <button class="theme-toggle" id="themeToggle">🌙</button>
-
-  <!-- Background Bubbles -->
-  <div class="bubbles">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <header class="header" data-aos="fade-down">
-    <img src="profile.png" alt="Profile" class="profile-img"/>
-    <h1 class="title">👋 Hi, I'm Kunal</h1>
-    <p class="subtitle">Frontend Developer & UI Enthusiast</p>
+  <canvas id="particles"></canvas>
+  <header>
+    <div class="logo">Techolic</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="toggleMode">🌙</button>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="card" data-aos="fade-up">
-      <h2>💼 Projects</h2>
-      <ul class="project-list">
-        <li><a href="#">🌐 Modern Landing Page</a></li>
-        <li><a href="#">🎮 Tic Tac Toe Game</a></li>
-        <li><a href="#">⏱ Stopwatch App</a></li>
-      </ul>
-    </section>
-
-    <section class="card" data-aos="fade-up">
-      <h2>🧠 Skills</h2>
-      <div class="skills">
-        <span>🌐 HTML</span>
-        <span>🎨 CSS</span>
-        <span>⚙️ JavaScript</span>
-        <span>⚛️ React</span>
-        <span>🧩 Git</span>
+  <section id="home" class="section">
+    <div class="hero">
+      <div class="hero-text">
+        <h1 class="glitch" data-text="Hey!">Hey!</h1>
+        <h1 class="glitch" data-text="I'm Kunal Bawliya">I'm Kunal Bawliya</h1>
+        <p>Aspiring Web-Developer | Tech Enthusiast</p>
+        <p>Welcome to my portfolio! I am a passionate developer with a keen interest in web technologies.</p>
+        <div class="social-icons">
+          <a href="https://github.com/kunalbawliya" target="_blank"><img src="github.png" alt="GitHub" class="icon-img"/></a>
+          <a href="https://linkedin.com" target="_blank"><img src="linkedin.png" alt="LinkedIn" class="icon-img"/></a>
+          <a href="https://instagram.com" target="_blank"><img src="instagram.png" alt="Instagram" class="icon-img"/></a>
+        </div>
+        <a href="Kunal_Bawliya_CV.pdf" class="btn-projects" download>Download CV</a>
+        <a href="#projects" class="btn-projects">See My Projects</a>
       </div>
-    </section>
+      <div class="hero-photo">
+        <svg viewBox="0 0 200 200" width="250" height="250">
+          <defs>
+            <clipPath id="blob">
+              <path fill="#00c9ff" d="M47.5,-62.2C61.4,-50.3,71.3,-34.4,74.1,-18.3C76.9,-2.2,72.7,14,63.4,27.6C54.1,41.2,39.7,52.3,24.1,60.5C8.5,68.7,-8.3,74,-23.6,68.2C-39,62.5,-52.9,45.8,-60.8,28C-68.6,10.2,-70.4,-8.6,-63.9,-23.2C-57.3,-37.9,-42.4,-48.4,-27.3,-59.2C-12.2,-69.9,3.1,-80.9,17.9,-79.2C32.6,-77.6,47.5,-62.2,47.5,-62.2Z" transform="translate(100 100)" />
+            </clipPath>
+          </defs>
+          <image href="aboutme.jpeg" clip-path="url(#blob)" width="200" height="200" x="0" y="0" preserveAspectRatio="xMidYMid slice"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <section class="card" data-aos="fade-up">
-      <h2>🙋 About Me</h2>
-      <p>
-        I'm passionate about creating beautiful and responsive web apps with clean code and sleek designs.
-        I enjoy working with HTML, CSS, JavaScript, and learning modern frameworks.
-      </p>
-    </section>
+  <section id="about" class="section about-section">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>Qualification: B.Tech in Computer Science</p>
+        <p>Interests: Web Development, AI, Machine Learning</p>
+        <p>Experience: 2 years in web development</p>
+        <p>Hobbies: Coding, Gaming, Reading</p>
+        <p>Achievements: Completed various projects and internships</p>
+      </div>
+      <div class="about-img">
+        <img src="aboutme.jpeg" alt="About Me Photo" class="about-photo"/>
+      </div>
+    </div>
+    <div class="skills">
+      <h3>Skills</h3>
+      <div class="skill"><span>HTML</span><div class="progress"><div style="width: 90%"></div></div></div>
+      <div class="skill"><span>CSS</span><div class="progress"><div style="width: 85%"></div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="progress"><div style="width: 80%"></div></div></div>
+      <div class="skill"><span>React</span><div class="progress"><div style="width: 75%"></div></div></div>
+      <div class="skill"><span>Node.js</span><div class="progress"><div style="width: 70%"></div></div></div>
+    </div>
+  </section>
 
-    <section class="card" data-aos="fade-up">
-      <h2>📬 Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
-    </section>
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card" style="background-image: url('stopwatch.jpeg');">
+        <div class="project-overlay"><h3>Stopwatch</h3><a href="#">View</a></div>
+      </div>
+      <div class="project-card" style="background-image: url('tic-tac-toe.jpeg');">
+        <div class="project-overlay"><h3>Tic Tac Toe</h3><a href="#">View</a></div>
+      </div>
+      <div class="project-card" style="background-image: url('weather-app.jpeg');">
+        <div class="project-overlay"><h3>Weather App</h3><a href="#">View</a></div>
+      </div>
+    </div>
+  </section>
 
-    <a href="../index.html" class="back-link" data-aos="fade-up">⬅ Back to Home</a>
-  </main>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const toggle = document.getElementById("themeToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    });
-  </script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-social">
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Library</h4>
+          <a href="#">Geeks for Geeks</a><a href="#">W3School</a><a href="#">AI</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Docs</a>
+        </div>
+        <div>
+          <h4>Terms</h4>
+          <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a>
+        </div>
+        <div>
+          <h4>Any Query???</h4>
+          <form id="queryForm">
+            <input type="email" placeholder="Your Email" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; 2025 Techolic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
